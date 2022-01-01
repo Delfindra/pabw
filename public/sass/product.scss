@@ -1,0 +1,256 @@
+// font
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap");
+
+// variabel
+$primaryColor: #ebbc43;
+$secondaryColor: #a1aeef;
+$tersieryColor: #6473f9;
+$primfontcolor: #000000;
+$SecFontColor: #9d9d9d;
+$fourthColor: #d3cbea;
+$fifthColor: #abacdd;
+$sixthColor: #f6f5fb;
+
+@mixin section-padding($pbott: 3rem) {
+  padding-top: 2rem;
+  padding-bottom: $pbott;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
+
+@mixin Kolase {
+  color: $sixthColor;
+  text-align: center;
+}
+
+@mixin hover {
+  img {
+    transform: scale(1.05);
+    opacity: 0.7;
+  }
+}
+
+@mixin titleMargin {
+  margin-left: 9.5rem;
+  margin-bottom: 2rem;
+}
+
+@mixin navbar {
+  .navbar-brand {
+    font-size: 24px;
+  }
+  .navbar-collapse {
+    .navbar-nav {
+      .nav-link {
+        font-weight: 500;
+        text-transform: uppercase;
+        margin-left: 2.2em;
+      }
+      .nav-link:hover {
+        color: $tersieryColor;
+      }
+    }
+  }
+  .navbar-brand {
+    color: $primfontcolor;
+    font-weight: 700;
+  }
+}
+
+@mixin bannerRadius {
+  border-top-right-radius: 14px;
+  border-bottom-right-radius: 14px;
+  border-top-left-radius: 14px;
+  border-bottom-left-radius: 14px;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+// ========== NAVBAR ==========
+.customNav {
+  @include navbar();
+}
+
+// ========== HERO IMAGE ==========
+.hero {
+  @include section-padding(0);
+  margin-top: -1rem;
+  margin-bottom: 2rem;
+  background-color: $sixthColor;
+
+  &-subjudul {
+    font-weight: 700;
+    color: $SecFontColor;
+  }
+  &-judul {
+    font-weight: 700;
+  }
+  &-collection {
+    padding-top: 0.5rem;
+    color: $tersieryColor;
+    font-weight: 500;
+  }
+}
+
+// ========== DEAL OF THE WEEK ==========
+.dotw {
+  @include section-padding(0);
+
+  &-top {
+    @include titleMargin();
+  }
+
+  &-title {
+    font-weight: 700;
+  }
+
+  &-titledesc {
+    font-weight: 500;
+    color: $SecFontColor;
+  }
+
+  &-col {
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+
+  &-card {
+    width: 14rem;
+  }
+
+  &-small {
+    color: $SecFontColor;
+  }
+
+  &-card:hover {
+    border: 3px solid $secondaryColor;
+  }
+}
+
+//========== KOLASE ==========
+.sect2 {
+  @include section-padding();
+  &-col21 {
+    margin-bottom: 13px;
+    margin-left: 13px;
+  }
+
+  &-col31,
+  &-col32 {
+    margin-left: 13px;
+  }
+
+  &-bannerL {
+    h1 {
+      @include Kolase();
+      padding-top: 180px;
+    }
+  }
+
+  &-bannerRA {
+    h1 {
+      @include Kolase();
+      padding-top: 70px;
+    }
+  }
+
+  &-bannerRB {
+    h1 {
+      @include Kolase();
+      padding-top: 80px;
+    }
+  }
+
+  &-col1:hover {
+    @include hover();
+    overflow: hidden;
+  }
+}
+
+// ========== POPULAR ==========
+.popular {
+  @include section-padding(0);
+  &-top {
+    @include titleMargin();
+  }
+  &-title {
+    font-weight: 700;
+  }
+
+  &-col {
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+  &-card {
+    width: 14rem;
+    .img1 {
+      padding: 28px 0;
+    }
+  }
+  &-titledesc {
+    font-weight: 500;
+    color: $SecFontColor;
+  }
+  &-small {
+    color: $SecFontColor;
+  }
+  &-card:hover {
+    border: 3px solid $secondaryColor;
+  }
+}
+
+// ========== SPESIAL ==========
+.special {
+  @include section-padding();
+  &-top {
+    @include titleMargin();
+  }
+
+  &-title {
+    font-weight: 700;
+  }
+
+  &-titledesc {
+    font-weight: 500;
+    color: $SecFontColor;
+  }
+
+  &-card {
+    .c1 {
+      @include bannerRadius();
+      background-color: $tersieryColor;
+    }
+    .c2 {
+      @include bannerRadius();
+      background-color: $secondaryColor;
+    }
+    .c3 {
+      @include bannerRadius();
+      background-color: $primaryColor;
+    }
+  }
+
+  &-body {
+    .sub,
+    .special-title {
+      // padding: 10px 0;
+      color: $sixthColor;
+      font-weight: 700;
+      font-size: 18px;
+    }
+  }
+
+  &-col {
+    .b1,
+    .b3 {
+      padding-top: 25px;
+      padding-bottom: 25px;
+    }
+    .b2 {
+      padding-top: 32px;
+      // padding-bottom: 10px;
+    }
+  }
+}

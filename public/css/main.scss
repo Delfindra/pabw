@@ -1,0 +1,558 @@
+// font
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap");
+
+// variabel
+$primaryColor: #ebbc43;
+$secondaryColor: #a1aeef;
+$tersieryColor: #6473f9;
+$primfontcolor: #000000;
+$SecFontColor: #9d9d9d;
+$fourthColor: #d3cbea;
+$fifthColor: #abacdd;
+$sixthColor: #f6f5fb;
+
+// PRODUCT
+@mixin section-padding($pbott: 3rem) {
+  padding-top: 2rem;
+  padding-bottom: $pbott;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
+
+@mixin Kolase($ptop: 0) {
+  color: $sixthColor;
+  text-align: center;
+  padding-top: $ptop;
+}
+
+@mixin kol-hover1 {
+  filter: brightness(100%);
+  transform: scale(1.03);
+}
+
+@mixin kol-hover2($mleft: 0, $mbot: 0) {
+  margin-left: $mleft;
+  margin-bottom: $mbot;
+  transition: transform 2s, filter 1s ease-in-out;
+  transform-origin: center center;
+  filter: brightness(50%);
+}
+
+@mixin sectTitle {
+  margin-left: 9.5rem;
+  margin-bottom: 2rem;
+  .title {
+    font-weight: 700;
+  }
+
+  .titledesc {
+    font-weight: 500;
+    color: $SecFontColor;
+  }
+}
+
+@mixin bannerRadius($defcol: $sixthColor) {
+  border-top-right-radius: 14px;
+  border-bottom-right-radius: 14px;
+  border-top-left-radius: 14px;
+  border-bottom-left-radius: 14px;
+  background-color: $defcol;
+}
+
+@mixin bannerDesc {
+  color: $sixthColor;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+// HOME
+@mixin desc($fcol: $SecFontColor) {
+  .judul {
+    font-weight: 700;
+  }
+  .desc {
+    padding-top: 2rem;
+    color: $fcol;
+    line-height: 1.75rem;
+  }
+}
+
+@mixin illust($ill: 0) {
+  padding-top: 4rem;
+  padding-bottom: 2.5rem;
+  img {
+    width: $ill;
+  }
+}
+
+@mixin rdesc {
+  .judul {
+    padding-top: 0.5em;
+  }
+  .desc {
+    padding-top: 1.5em;
+  }
+}
+
+@mixin rillust {
+  display: block;
+  padding-top: 2.5em;
+  padding-bottom: 2.5em;
+}
+
+//DESC
+@mixin button($bgcol: $primaryColor, $border: $primaryColor) {
+  margin-top: 2rem;
+  padding: 0.75em 1.75em;
+  font-weight: 700;
+  border-radius: 10px;
+  background-color: $bgcol;
+  border-style: solid;
+  border-color: $border;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+// ========== NAVBAR ==========
+.navbar {
+  & &-brand {
+    font-size: 24px;
+    font-weight: 700;
+  }
+  & &-collapse {
+    .navbar-nav {
+      .nav-link {
+        font-weight: 500;
+        text-transform: uppercase;
+        margin-left: 2.2em;
+      }
+      .nav-link:hover {
+        color: $tersieryColor;
+      }
+    }
+  }
+}
+
+// HOME
+.r1 {
+  @include section-padding(0);
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+  & &-rsatu {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    .satu {
+      @include desc();
+      .btn {
+        margin-top: 4rem;
+        padding: 0.75em 1.75em;
+        background-color: $primaryColor;
+        font-weight: 700;
+        border-radius: 12px;
+      }
+    }
+    .dua {
+      @include illust(700px);
+    }
+  }
+}
+
+.r2 {
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+  background-color: $secondaryColor;
+  & &-rdua {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    .tiga {
+      @include illust(475px);
+    }
+    .empat {
+      @include desc($primfontcolor);
+    }
+  }
+}
+
+.r3 {
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+  & &-rtiga {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    .lima {
+      @include desc();
+    }
+    .enam {
+      @include illust(475px);
+    }
+  }
+}
+
+.r4 {
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+  & &-rempat {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    .tujuh {
+      @include illust(475px);
+    }
+    .delapan {
+      @include desc();
+    }
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .r1 {
+    & &-rsatu {
+      flex-direction: column-reverse;
+      .dua {
+        @include rillust();
+      }
+      .satu {
+        @include rdesc();
+        .btn {
+          font-size: 0.75em;
+          padding: 0.75em 1.25em;
+          margin-top: 1.5em;
+        }
+      }
+    }
+  }
+
+  .r2 {
+    & &-rdua {
+      .tiga {
+        @include rillust();
+      }
+      .empat {
+        @include rdesc();
+      }
+    }
+  }
+
+  .r3 {
+    & &-rtiga {
+      flex-direction: column-reverse;
+      .enam {
+        @include rillust();
+      }
+
+      .lima {
+        @include rdesc();
+      }
+    }
+  }
+
+  .r4 {
+    & &-rempat {
+      .tujuh {
+        @include rillust();
+      }
+      .delapan {
+        @include rdesc();
+      }
+    }
+  }
+}
+
+// @media screen and (max-width: 740px) {
+//   .dotw-card {
+//     width: 100%;
+//   }
+// }
+
+// PRODUCT
+// ========== HERO IMAGE ==========
+.hero {
+  @include section-padding(0);
+  margin-top: -1rem;
+  margin-bottom: 2rem;
+  background-color: $sixthColor;
+
+  & &-subjudul {
+    font-weight: 700;
+    color: $SecFontColor;
+  }
+  & &-judul {
+    font-weight: 700;
+  }
+  & &-collection {
+    padding-top: 0.5rem;
+    color: $tersieryColor;
+    font-weight: 500;
+  }
+}
+
+// ========== DEAL OF THE WEEK ==========
+.dotw {
+  @include section-padding(0);
+
+  & &-top {
+    @include sectTitle();
+  }
+
+  & &-col {
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-bottom: 15px;
+    .dotw-card {
+      width: 14rem;
+      .dotw-small {
+        color: $SecFontColor;
+      }
+    }
+
+    .dotw-card:hover {
+      // border: 3px solid $secondaryColor;
+      box-shadow: 2px 2px 3px grey;
+    }
+  }
+}
+
+//========== KOLASE ==========
+.sect2 {
+  @include section-padding();
+
+  & &-col1 {
+    @include kol-hover2(13px, 13px);
+    .bannerL {
+      h1 {
+        @include Kolase(50%);
+      }
+    }
+  }
+
+  & &-col21 {
+    @include kol-hover2(13px, 13px);
+    .bannerRA {
+      h1 {
+        @include Kolase(10%);
+        color: $sixthColor
+      }
+    }
+  }
+
+  & &-col31,
+  & &-col32 {
+    @include kol-hover2(13px, 0);
+    .bannerRB {
+      h1 {
+        @include Kolase(25%);
+      }
+    }
+  }
+
+  & &-col1:hover,
+  & &-col21:hover,
+  & &-col31:hover,
+  & &-col32:hover {
+    @include kol-hover1();
+    cursor: pointer;
+  }
+}
+
+// ========== POPULAR ==========
+.popular {
+  @include section-padding(0);
+  & &-top {
+    @include sectTitle();
+  }
+
+  & &-col {
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-bottom: 15px;
+    .popular-card {
+      width: 14rem;
+
+      .popular-small {
+        color: $SecFontColor;
+      }
+    }
+    .popular-card:hover {
+      box-shadow: 2px 2px 3px grey;
+    }
+  }
+}
+
+// ========== SPESIAL ==========
+.special {
+  @include section-padding();
+  & &-top {
+    @include sectTitle();
+  }
+
+  & &-card {
+    .c1 {
+      @include bannerRadius($tersieryColor);
+      .sub {
+        @include bannerDesc();
+      }
+    }
+    .c2 {
+      @include bannerRadius($secondaryColor);
+      .sub {
+        @include bannerDesc();
+      }
+    }
+    .c3 {
+      @include bannerRadius($primaryColor);
+      .sub {
+        @include bannerDesc();
+      }
+    }
+    .gmbr {
+      .b1,
+      .b3 {
+        padding-top: 25px;
+        padding-bottom: 25px;
+      }
+      .b2 {
+        padding-top: 32px;
+      }
+    }
+  }
+}
+
+// ========== DESC ==========
+// ==================== DESKRIPSI BARANG ====================
+.desc {
+  @include section-padding(0);
+  & &-gmbr {
+    padding: 2rem 0 2rem;
+    img {
+      width: 475px;
+    }
+  }
+  & &-deskripsi {
+    .judul {
+      font-weight: 700;
+    }
+    .desk {
+      padding-top: 0.5rem;
+      color: $primfontcolor;
+      line-height: 1.5rem;
+    }
+    .btn {
+      padding: 0;
+      .btn1 {
+        @include button();
+      }
+      .btn2 {
+        @include button();
+        color: $primaryColor;
+        background-color: #ffffff;
+      }
+    }
+  }
+}
+
+// ==================== RELATED PRODUCTS ====================
+.related {
+  @include section-padding();
+  margin-bottom: -4rem;
+  background-color: $sixthColor;
+
+  & &-top {
+    @include sectTitle();
+  }
+
+  & &-col {
+    margin-left: 15px;
+    margin-right: 15px;
+    .card {
+      width: 14rem;
+      .small {
+        color: $SecFontColor;
+      }
+    }
+    .card:hover {
+      box-shadow: 2px 2px 3px grey;
+    }
+  }
+}
+
+// ==================== ABOUT ====================
+.about {
+  @include section-padding();
+  background-color: $sixthColor;
+  & &-judul {
+    font-weight: 700;
+  }
+  & &-desck {
+    padding-top: 1rem;
+    font-weight: 500;
+    color: $SecFontColor;
+  }
+}
+
+.balicraft {
+  @include section-padding();
+  & &-bc {
+    .judul {
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+    .desc3 {
+      line-height: 1.7;
+    }
+    .img {
+      .gmbr2 {
+        @include bannerRadius();
+      }
+    }
+  }
+}
+
+.team {
+  @include section-padding();
+  margin-bottom: -4rem;
+  background-color: $sixthColor;
+  & &-title2 {
+    .judul {
+      font-weight: 700;
+    }
+    .subjudul {
+      font-weight: 500;
+    }
+  }
+
+  & &-delfin,
+  & &-adib,
+  & &-anjeli,
+  & &-unggul {
+    margin-top: 2rem;
+    .card {
+      @include bannerRadius();
+      .card-img {
+        @include bannerRadius();
+
+        height: 240px;
+        filter: brightness(60%);
+      }
+      .overlay {
+        margin-top: 90%;
+      }
+    }
+  }
+}
+
+/* cart */
+body {
+  background: #f4f5f7;
+  margin-top: 20px;
+}
+.cart-container {
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  padding: 30px;
+}
+.cart-container .cart-body {
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  padding: 30px 0 20px;
+  margin: 20px 0 30px;
+}

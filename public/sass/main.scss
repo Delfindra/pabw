@@ -1,0 +1,158 @@
+// font
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap");
+@import "product";
+
+// variabel
+$primaryColor: #ebbc44;
+$secondaryColor: #a1aeef;
+$tersieryColor: #6473f9;
+$primfontcolor: #000000;
+$SecFontColor: #9d9d9d;
+
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+.r2 {
+  background-color: $secondaryColor;
+}
+.customNav {
+  @include navbar();
+}
+
+.container {
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+  .row {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    .satu {
+      .judul {
+        font-weight: 700;
+      }
+      .desc {
+        padding-top: 2rem;
+        color: $SecFontColor;
+        line-height: 1.75rem;
+      }
+      .btn {
+        margin-top: 4rem;
+        padding: 0.75em 1.75em;
+        background-color: $primaryColor;
+        font-weight: 700;
+        border-radius: 12px;
+      }
+    }
+    .dua {
+      padding-top: 4rem;
+      padding-bottom: 2.5rem;
+      img {
+        width: 700px;
+      }
+    }
+
+    // ==================== row 2 ====================
+    .tiga {
+      padding-top: 3rem;
+      padding-bottom: 2rem;
+      img {
+        width: 475px;
+      }
+    }
+    .empat {
+      .judul {
+        font-weight: 700;
+      }
+      .desc {
+        padding-top: 1.75rem;
+        color: $primfontcolor;
+        line-height: 1.75rem;
+      }
+    }
+
+    // ==================== row 3 ====================
+    .lima {
+      .judul {
+        font-weight: 700;
+      }
+      .desc {
+        padding-top: 1.75rem;
+        color: $SecFontColor;
+        line-height: 1.75rem;
+      }
+    }
+    .enam {
+      padding-top: 3rem;
+      padding-bottom: 2rem;
+      img {
+        width: 475px;
+      }
+    }
+
+    // ==================== row 4 ====================
+    .tujuh {
+      padding-top: 3rem;
+      padding-bottom: 2rem;
+      img {
+        width: 475px;
+      }
+    }
+    .delapan {
+      .judul {
+        font-weight: 700;
+      }
+      .desc {
+        padding-top: 1.75rem;
+        color: $SecFontColor;
+        line-height: 1.75rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .container {
+    .r_satu,
+    .r_tiga {
+      flex-direction: column-reverse;
+      .dua,
+      .enam {
+        display: block;
+        padding-top: 2.5em;
+        padding-bottom: 2.5em;
+      }
+      .satu,
+      .lima {
+        .judul {
+          padding-top: 0.5em;
+        }
+        .desc {
+          padding-top: 1.5em;
+        }
+        .btn {
+          font-size: 0.75em;
+          padding: 0.75em 1.25em;
+          margin-top: 1.5em;
+        }
+      }
+    }
+    .r_dua,
+    .r_empat {
+      .tiga,
+      .tujuh {
+        display: block;
+        padding-top: 2.5em;
+        padding-bottom: 2.5em;
+      }
+      .empat,
+      .delapan {
+        .judul {
+          padding-top: 0.5em;
+        }
+        .desc {
+          padding-top: 1.5em;
+        }
+      }
+    }
+  }
+}
